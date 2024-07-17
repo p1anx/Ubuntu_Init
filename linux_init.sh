@@ -3,7 +3,7 @@
 sudo apt update
 
 sudo apt install curl -y
-sudo apt instlal tmux -y
+
 # ********************************************
 # git config
 sudo apt install git -y
@@ -26,8 +26,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' ~/.zshrc >>!
 
 # sed -i '12c\ZSH_THEME="bira"' ~/.zshrc
-sed -i '12c\ZSH_THEME="owerlevel10k/powerlevel10k"' ~/.zshrc
-sed -i '74c\plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' ~/.zshrc
+sed -i '18c\ZSH_THEME="owerlevel10k/powerlevel10k"' ~/.zshrc
+sed -i '81c\plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' ~/.zshrc
 source ~/.zshrc
 
 # ********************************************
@@ -92,6 +92,10 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 
+# ********************************************
+sudo apt instlal tmux -y
+
+# ********************************************
 # node and npm
 sudo apt install nodejs -y
 sudo apt install npm -y
