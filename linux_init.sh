@@ -26,7 +26,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' ~/.zshrc >>!
 
 # sed -i '12c\ZSH_THEME="bira"' ~/.zshrc
-sed -i '18c\ZSH_THEME="owerlevel10k/powerlevel10k"' ~/.zshrc
+sed -i '18c\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
 sed -i '81c\plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' ~/.zshrc
 source ~/.zshrc
 
