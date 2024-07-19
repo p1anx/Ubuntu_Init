@@ -15,7 +15,7 @@ git config --global user.email "2514034568@qq.com"
 # zsh
 sudo apt install zsh -y
 
-sh -c "$(curl -fsSL https://gitee.com/shmhlsy/oh-my-zsh-install.sh/raw/master/install.sh)"
+sh -c "$(curl -fsSL https://gitee.com/shmhlsy/oh-my-zsh-install.sh/raw/master/install.sh)" y
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -23,11 +23,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' ~/.zshrc >>!
+# echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' ~/.zshrc >>!
 
 # sed -i '12c\ZSH_THEME="bira"' ~/.zshrc
-sed -i '18c\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
-sed -i '81c\plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' ~/.zshrc
+# sed -i '18c\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
+# sed -i '81c\plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' ~/.zshrc
+echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc
+echo 'plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' >> ~/.zshrc
+echo 'source $ZSH/oh-my-zsh.sh' >> ~/.zshrc
 source ~/.zshrc
 
 # ********************************************
