@@ -8,8 +8,8 @@ sudo apt install curl -y
 # git config
 sudo apt install git -y
 
-git config --global user.name "xwj"
 git config --global user.email "2514034568@qq.com"
+git config --global user.name "xwj"
 
 # ********************************************
 # zsh
@@ -28,9 +28,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # sed -i '12c\ZSH_THEME="bira"' ~/.zshrc
 # sed -i '18c\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
 # sed -i '81c\plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' ~/.zshrc
-echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc
-echo 'plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' >> ~/.zshrc
-echo 'source $ZSH/oh-my-zsh.sh' >> ~/.zshrc
+echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >>~/.zshrc
+echo 'plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' >>~/.zshrc
+echo 'source $ZSH/oh-my-zsh.sh' >>~/.zshrc
 source ~/.zshrc
 
 # ********************************************
@@ -104,9 +104,8 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 
 # vscode
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-get update
 sudo apt-get install code
-
