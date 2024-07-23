@@ -1,7 +1,8 @@
 #!/bash/bin
+read -p "input passwd:" passwd
 user=xwj
-samba_passwd=xwjs
 
+sudo yum update <<< $passwd  #密码作为变量传入
 sudo yum install -y samba
 sudo yum install -y samba-client
 
