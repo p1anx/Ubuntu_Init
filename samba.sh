@@ -34,3 +34,8 @@ sudo echo "guest only = yes" >>/etc/samba/smb.conf
 sudo echo "read only = no" >>/etc/samba/smb.conf
 
 sudo smbpasswd -a $user
+sudo systemctl start smb.service
+sudo systemctl start nmb.service
+
+sudo systemctl enable smb.service
+sudo systemctl enable nmb.service
