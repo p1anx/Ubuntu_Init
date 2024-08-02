@@ -15,7 +15,9 @@ elif grep -q "Rocky" /etc/os-release; then
   sudo dnf update
   sudo dnf config-manager --set-enabled crb
   sudo dnf install -y epel-release
-  sudo dnf install -y zsh tar wget
+  sudo dnf install -y zsh 
+  sudo dnf install -y tar 
+  sudo dnf install -y wget
   sudo dnf install -y vim
   sudo dnf install -y tmux
   sudo dnf install -y fzf
@@ -24,6 +26,9 @@ else
   exit 1
 fi
 
+sh -c "$(curl -fsSL https://gitee.com/shmhlsy/oh-my-zsh-install.sh/raw/master/install.sh)" 
+echo 'ZSH_THEME="bira"' >> ~/.zshrc
+echo 'source $ZSH/oh-my-zsh.sh' >> ~/.zshrc
 echo "zsh 已成功安装。"
 #================================================
 # download mihomo file and config
@@ -148,7 +153,7 @@ EOF
             ;;
 esac
 # 开启代理
-pon
+#pon
 # run mihomo
 # mihomo -d /etc/mihomo
 #================================================
@@ -160,14 +165,15 @@ git config --global user.email "2514034568@qq.com"
 #================================================
 # oh my zsh
 #================================================
-sh -c "$(curl -fsSL https://gitee.com/shmhlsy/oh-my-zsh-install.sh/raw/master/install.sh)" 
+#sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
 # chsh -s /usr/bin/zsh  # 将 zsh 作为默认 shell
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 echo 'plugins=(git z extract web-search zsh-syntax-highlighting zsh-autosuggestions)' >> ~/.zshrc
 echo 'source $ZSH/oh-my-zsh.sh' >> ~/.zshrc
-source ~/.zshrc
+
 
 #================================================
 # vim
